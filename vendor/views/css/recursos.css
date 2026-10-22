@@ -1,0 +1,29 @@
+﻿.sidebar-title { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 20px; }
+.tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; padding: 5px; margin-bottom: 16px; border: 1px solid var(--borde); border-radius: 10px; background: var(--campo); }
+.tabs button { padding: 8px 5px; border-color: transparent; background: transparent; color: var(--texto-suave); font-size: 13px; }
+.tabs button:hover:not(:disabled) { color: var(--texto); background: var(--panel-2); }
+.tabs button.active { background: var(--acento); color: var(--tinta-acento); border-color: var(--acento); }
+.tabs button.active:hover:not(:disabled) { background: var(--acento-hover); color: var(--tinta-acento); border-color: var(--acento-hover); }
+.recursos-grid, .recursos-audio { flex: 1; min-height: 220px; max-height: 450px; overflow-y: auto; scrollbar-color: #7d879b var(--campo); }
+.recursos-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: min-content; gap: 10px; align-content: start; }
+.recursos-audio { display: flex; flex-direction: column; gap: 10px; }
+.recursos-vacio { grid-column: 1 / -1; margin: 0; padding: 28px 16px; border: 1px dashed #7c879d; border-radius: 10px; background: var(--campo); color: var(--texto-suave); font-size: 13px; line-height: 1.7; text-align: center; }
+.recurso-card { position: relative; display: flex; flex-direction: column; gap: 8px; min-width: 0; padding: 8px; border: 1px solid var(--borde); border-radius: 10px; background: var(--panel-2); }
+.recurso-card:hover { border-color: var(--acento); }
+.recurso-card img { width: 100%; height: 90px; border-radius: 6px; background: #e5e7ed; object-fit: contain; }
+.recurso-card span { overflow: hidden; color: var(--texto); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.recurso-card .boton-agregar { padding: 4px 8px; border-color: #8f80bd; background: var(--acento-suave); color: #e0d7ff; font-size: 18px; }
+.recurso-card .boton-agregar:hover:not(:disabled) { color: var(--tinta-acento); background: var(--acento); }
+.recursos-audio .recurso-card { flex-direction: row; align-items: center; }
+.recursos-audio .recurso-card span { flex: 1; min-width: 0; }
+.recursos-audio .audio-play { padding: 7px; font-size: 12px; }
+.boton-eliminar-recurso { position: absolute; top: 5px; right: 5px; width: 32px; min-height: 32px; padding: 0; border: 1px solid #996573; border-radius: 7px; color: var(--peligro); background: var(--peligro-fondo); font-size: 20px; line-height: 1; }
+.boton-eliminar-recurso:hover:not(:disabled) { color: var(--peligro); background: #6a424c; border-color: var(--peligro); }
+.recursos-audio .boton-eliminar-recurso { position: static; flex: 0 0 32px; }
+#importarBtn { margin-top: 18px; border-color: #8f80bd; background: var(--acento-suave); color: #e0d7ff; }
+#importarBtn:hover:not(:disabled) { color: var(--tinta-acento); background: var(--acento); border-color: var(--acento); }
+.sidebar > .nota { margin: 12px 0 0; }
+@media (max-width: 760px) {
+  .recursos-grid, .recursos-audio { flex: none; min-height: 120px; max-height: 280px; }
+  .recursos-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+}

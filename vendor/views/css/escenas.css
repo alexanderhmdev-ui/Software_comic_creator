@@ -1,0 +1,10 @@
+﻿.panel-escenas { display: flex; flex-direction: column; gap: 16px; }
+.escenas-lista { display: flex; gap: 10px; overflow-x: auto; padding: 4px 4px 10px; scrollbar-color: #7d879b var(--campo); }
+.escena-card { display: flex; flex: 0 0 170px; flex-direction: column; gap: 8px; min-width: 0; padding: 12px; border: 1px solid var(--borde); border-radius: 10px; background: var(--campo); }
+.escena-card:hover { border-color: #929cb0; }
+.escena-card.activa { border-color: var(--acento); background: var(--acento-suave); box-shadow: 0 0 0 1px var(--acento); }
+.escena-titulo { overflow: hidden; padding: 2px; border-color: transparent; color: var(--texto); background: transparent; text-align: left; text-overflow: ellipsis; white-space: nowrap; }
+.escena-titulo:hover:not(:disabled) { background: #ffffff0d; border-color: transparent; }
+.escena-card small { color: var(--texto-suave); font-size: 12px; }
+.escena-controles { display: flex; gap: 5px; }
+.escena-controles button { flex: 1; min-width: 0; min-height: 34px; padding: 4px; color: var(--texto); background: var(--panel-2); font-size: 15px; }

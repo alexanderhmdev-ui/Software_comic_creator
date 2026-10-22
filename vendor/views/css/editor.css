@@ -1,0 +1,60 @@
+﻿.editor-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr) 240px;
+  align-items: start;
+  gap: 18px;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 2.5vw, 36px) 32px;
+}
+.sidebar, .propiedades, .panel-lienzo, .panel-escenas, .panel-timeline { min-width: 0; padding: 20px; }
+.sidebar { display: flex; flex-direction: column; min-height: 610px; }
+.zona-principal { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.panel-lienzo { display: flex; flex-direction: column; gap: 18px; }
+.panel-lienzo .section-top > div:first-child { display: flex; flex-direction: column; gap: 3px; }
+.panel-lienzo .eyebrow { margin-bottom: 0; }
+.mini-herramientas { display: flex; flex-wrap: wrap; gap: 8px; }
+.canvas-marco {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  border: 1px solid #526075;
+  border-radius: 10px;
+  background: #202530;
+}
+#lienzo {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 8px 24px #10131b4d;
+  touch-action: none;
+  cursor: grab;
+}
+#lienzo:active { cursor: grabbing; }
+.canvas-ayuda { margin: 0; color: var(--texto-suave); font-size: 13px; line-height: 1.6; }
+.propiedades label { display: block; margin: 16px 0 7px; color: var(--texto-suave); font-size: 13px; }
+.propiedades input, .propiedades textarea { width: 100%; }
+.propiedades textarea { min-height: 95px; resize: vertical; }
+.audio-en-escena { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--borde); font-size: 13px; }
+.audio-en-escena span { overflow-wrap: anywhere; }
+.audio-en-escena button { flex-shrink: 0; min-width: 36px; color: var(--peligro); background: var(--peligro-fondo); border-color: #996573; }
+@media (max-width: 1200px) {
+  .editor-layout { grid-template-columns: 240px minmax(0, 1fr); }
+  .propiedades { grid-column: 1 / -1; }
+}
+@media (max-width: 760px) {
+  .editor-layout { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 0 12px 24px; }
+  .sidebar, .propiedades, .panel-lienzo, .panel-escenas, .panel-timeline { padding: 16px; }
+  .sidebar { min-height: auto; }
+  .zona-principal { gap: 14px; }
+  .propiedades { grid-column: auto; }
+  .canvas-marco { padding: 10px; }
+}
+
+.controles-tamano { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin: 12px 0 4px; }
+.controles-tamano button { padding: 8px 5px; font-size: 12px; }

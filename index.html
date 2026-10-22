@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Editor educativo de cómics y escenas animadas sin base de datos." />
   <title>COMIC CREATOR | Editor</title>
-  <link rel="stylesheet" href="views/css/general.css" />
-  <link rel="stylesheet" href="views/css/editor.css" />
-  <link rel="stylesheet" href="views/css/recursos.css" />
-  <link rel="stylesheet" href="views/css/escenas.css" />
-  <link rel="stylesheet" href="views/css/timeline.css" />
-  <link rel="stylesheet" href="views/css/modales.css" />
+  <link rel="stylesheet" href="vendor/views/css/general.css" />
+  <link rel="stylesheet" href="vendor/views/css/editor.css" />
+  <link rel="stylesheet" href="vendor/views/css/recursos.css" />
+  <link rel="stylesheet" href="vendor/views/css/escenas.css" />
+  <link rel="stylesheet" href="vendor/views/css/timeline.css" />
+  <link rel="stylesheet" href="vendor/views/css/modales.css" />
 </head>
 <body>
+  <a class="salto-contenido" href="#contenidoPrincipal">Ir al editor</a>
   <header class="cabecera">
-    <div class="marca"><span aria-hidden="true">✦</span> COMIC<span>CREATOR</span></div>
+    <div class="marca"><span class="marca-icono" aria-hidden="true">✦</span> COMIC<span>CREATOR</span></div>
     <label class="campo-titulo" for="nombreProyecto">Proyecto <input id="nombreProyecto" value="Mi primer cómic" maxlength="90" /></label>
     <nav class="acciones" aria-label="Proyecto">
       <button id="nuevoBtn" class="secundario" title="Crear proyecto nuevo">Nuevo</button>
@@ -26,10 +27,10 @@
     </nav>
     <input id="abrirInput" type="file" accept=".comicproj,.zip" hidden />
   </header>
-  <div class="mensaje" id="mensaje" role="status" aria-live="polite">Editor listo. Importa recursos para comenzar.</div>
-  <div class="editor-layout">
+  <div class="mensaje" id="mensaje" role="status" aria-live="polite"><span class="mensaje-punto" aria-hidden="true"></span>Editor listo. Importa recursos para comenzar.</div>
+  <div class="editor-layout" id="contenidoPrincipal">
     <aside class="sidebar card" aria-label="Biblioteca de recursos">
-      <div class="sidebar-title"><h2>Recursos</h2><span class="subtle">Mi biblioteca</span></div>
+      <div class="sidebar-title"><div><p class="eyebrow">Tu caja de ideas</p><h2>Recursos</h2></div><span class="contador">En tu equipo</span></div>
       <div id="pestanasRecursos" class="tabs" role="tablist" aria-label="Tipos de recursos">
         <button data-tab="escenarios" class="active" role="tab">Fondos</button>
         <button data-tab="personajes" role="tab">Personajes</button>
@@ -44,7 +45,7 @@
     <main class="zona-principal">
       <section class="card panel-lienzo" aria-label="Editor de escena">
         <div class="section-top">
-          <div><h2>Escenario</h2><span class="subtle" id="escenaActivaNombre">Escena 1</span></div>
+          <div><p class="eyebrow">Aquí ocurre la acción</p><h2>Tu escena</h2><span class="subtle" id="escenaActivaNombre">Escena 1</span></div>
           <div class="mini-herramientas">
             <button id="previsualizarBtn" class="secundario">▶ Reproducir</button>
             <button id="detenerBtn" class="secundario" disabled>■ Detener</button>
@@ -58,12 +59,12 @@
         <div id="escenasListado" class="escenas-lista"></div>
       </section>
       <section class="card panel-timeline" aria-label="Línea de tiempo">
-        <div class="section-top"><h2>Línea de tiempo</h2><span id="tiempoTotal" class="subtle">0:05</span></div>
+        <div class="section-top"><h2>Línea de tiempo</h2><span id="tiempoTotal" class="tiempo-total">0:05</span></div>
         <div id="timeline" class="timeline-track"></div>
       </section>
     </main>
     <aside class="propiedades card" aria-label="Propiedades de elementos">
-      <div class="section-top"><h2>Propiedades</h2></div>
+      <div class="section-top"><div><p class="eyebrow">Edita tu creación</p><h2>Detalles</h2></div><span class="inspector-icon" aria-hidden="true">✎</span></div>
       <div id="propiedadesContenido"></div>
     </aside>
   </div>

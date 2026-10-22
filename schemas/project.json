@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "id": "identificador-del-proyecto",
+  "nombre": "Mi primer cómic",
+  "escenaActualId": "escena-1",
+  "recursos": [
+    {
+      "id": "recurso-1",
+      "categoria": "personajes",
+      "nombre": "personaje.png",
+      "mime": "image/png",
+      "ruta": "recursos/personajes/recurso-1.png"
+    }
+  ],
+  "escenas": [
+    {
+      "id": "escena-1",
+      "nombre": "Escena 1",
+      "duracion": 5,
+      "fondoId": null,
+      "elementos": [
+        {
+          "id": "elemento-1",
+          "recursoId": "recurso-1",
+          "tipo": "personajes",
+          "x": 360,
+          "y": 170,
+          "ancho": 170,
+          "alto": 230,
+          "texto": ""
+        }
+      ],
+      "pistas": []
+    }
+  ]
+}
