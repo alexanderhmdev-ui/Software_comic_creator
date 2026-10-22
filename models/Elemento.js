@@ -14,5 +14,6 @@ export function ajustarElemento(elemento, cambios) {
     }
   }
   if ('texto' in cambios) elemento.texto = String(cambios.texto).slice(0, 400);
+  if ('quitarFondoExterior' in cambios) elemento.quitarFondoExterior = Boolean(cambios.quitarFondoExterior);
   return elemento;
 }

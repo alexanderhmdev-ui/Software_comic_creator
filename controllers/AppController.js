@@ -149,6 +149,14 @@ export class AppController {
         const textarea = document.createElement('textarea'); textarea.maxLength = 400; textarea.value = elemento.texto || '';
         textarea.addEventListener('input', () => { elemento.texto = textarea.value; this.proyectos.marcar(); this.editorView.pintar(this.p, escena, elemento.id); });
         contenedor.append(label, textarea);
+        const fondoLabel = document.createElement('label'); fondoLabel.className = 'opcion-globo';
+        const fondoInput = document.createElement('input'); fondoInput.type = 'checkbox'; fondoInput.checked = elemento.quitarFondoExterior !== false;
+        fondoInput.addEventListener('change', () => this.editor.actualizar({ quitarFondoExterior: fondoInput.checked }));
+        const fondoTexto = document.createElement('span'); fondoTexto.textContent = 'Ocultar fondo blanco exterior';
+        fondoLabel.append(fondoInput, fondoTexto);
+        const ayudaGlobo = document.createElement('p'); ayudaGlobo.className = 'nota';
+        ayudaGlobo.textContent = 'El texto se ajusta al interior. El archivo original se conserva. Usa una plantilla sin texto impreso.';
+        contenedor.append(fondoLabel, ayudaGlobo);
       }
       const borrar = document.createElement('button'); borrar.textContent = 'Eliminar elemento'; borrar.className = 'peligro boton-ancho'; borrar.addEventListener('click', () => this.editor.eliminar()); contenedor.append(borrar);
     }

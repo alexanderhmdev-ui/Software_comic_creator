@@ -40,6 +40,8 @@
 .propiedades label { display: block; margin: 16px 0 7px; color: var(--texto-suave); font-size: 13px; }
 .propiedades input, .propiedades textarea { width: 100%; }
 .propiedades textarea { min-height: 95px; resize: vertical; }
+.propiedades .opcion-globo { display: flex; align-items: flex-start; gap: 8px; }
+.propiedades .opcion-globo input { flex: 0 0 18px; width: 18px; height: 18px; margin: 2px 0 0; padding: 0; accent-color: var(--acento); }
 .audio-en-escena { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--borde); font-size: 13px; }
 .audio-en-escena span { overflow-wrap: anywhere; }
 .audio-en-escena button { flex-shrink: 0; min-width: 36px; color: var(--peligro); background: var(--peligro-fondo); border-color: #996573; }
