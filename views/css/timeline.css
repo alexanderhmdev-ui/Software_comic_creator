@@ -1,0 +1,5 @@
+.panel-timeline{display:flex;flex-direction:column;gap:12px;}
+.timeline-track{display:flex;gap:3px;min-height:48px;background:#111a29;border-radius:9px;padding:7px;overflow-x:auto;}
+.timeline-bloque{min-width:65px;background:#345470;border:1px solid #618aac;color:#fff;font-size:11px;white-space:nowrap;}
+.timeline-bloque:nth-child(even){background:#4a4d80;}
+.timeline-bloque.marcado{border:2px solid #a8ceff;filter:brightness(1.2);}
